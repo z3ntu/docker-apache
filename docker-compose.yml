@@ -10,6 +10,7 @@ services:
       - ./config:/usr/local/apache2/conf
     external_links:
       - cvetracker_web_1:cve
+      - lineageosupdater_web_1:download
 
 networks:
   default:

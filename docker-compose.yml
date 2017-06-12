@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  apache:
+    image: httpd:alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./htdocs:/usr/local/apache2/htdocs
+      - ./config:/usr/local/apache2/conf
+    external_links:
+      - cvetracker_web_1:cve
+
+networks:
+  default:
+    external:
+      name: cvetracker_default
